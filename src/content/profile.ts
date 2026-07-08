@@ -6,8 +6,7 @@ export const profile = {
   focus: "AI Systems & Automation",
   email: "rso.janc@gmail.com",
   githubUrl: "https://github.com/JancKode",
-  // TODO(Jan): confirm the LinkedIn slug — not stated in the CV.
-  linkedinUrl: "https://www.linkedin.com/in/jckfrigillana",
+  linkedinUrl: "https://www.linkedin.com/in/jan-cyngynn-frigillana-299582143",
   cvPath: "/JCKFrigillana_CV.pdf",
   about: [
     "Full Stack Senior Software Engineer with 9+ years building production web applications across aviation, fintech, SaaS, supply chain, and workforce management.",
