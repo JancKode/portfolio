@@ -65,6 +65,24 @@ test.describe("sticky nav", () => {
       page.getByRole("heading", { name: /contact/i }),
     ).toBeInViewport();
   });
+
+  test("anchor navigation jumps instantly for reduced-motion visitors", async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/");
+
+    await page
+      .getByRole("navigation")
+      .getByRole("link", { name: /contact/i })
+      .click();
+
+    // No glide: an instant jump's first scroll movement already lands at the
+    // Contact Section, while a smooth scroll's first frames barely move.
+    await page.waitForFunction(() => window.scrollY > 0);
+    const scrollY = await page.evaluate(() => window.scrollY);
+    expect(scrollY).toBeGreaterThan(500);
+  });
 });
 
 test.describe("contact links", () => {

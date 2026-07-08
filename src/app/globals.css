@@ -13,6 +13,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Smooth anchor scrolling for sticky-nav navigation, except for
+   motion-sensitive visitors. Do NOT add data-scroll-behavior="smooth" to
+   <html>: Next.js then forces instant scrolling on router navigations,
+   which includes hash Link clicks — it kills this glide. Revisit scroll
+   position on route transitions when per-Case-Study pages land. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
