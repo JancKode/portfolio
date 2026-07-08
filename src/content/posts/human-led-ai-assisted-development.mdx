@@ -1,0 +1,62 @@
+Every line of code I ship today passes through an AI agent at some point —
+and every decision that matters doesn't. That split is deliberate, and it is
+the single most useful working agreement I've found for building production
+software with tools like Claude Code, Cursor, and GitHub Copilot.
+
+The industry framing tends to be binary: either agents are about to replace
+engineers, or they're autocomplete with good marketing. Neither matches what
+daily practice actually looks like. What works is a division of labour.
+
+## What stays human-led
+
+Three things never get delegated: planning, architecture, and review.
+
+**Planning** is where the real engineering happens. Before an agent writes
+anything, I decide what we're building, what the acceptance criteria are, and
+what is explicitly out of scope. An agent given a vague goal produces
+confident, plausible, wrong code faster than any junior developer could.
+
+**Architecture** is a set of commitments the codebase has to live with for
+years. Which boundaries exist, where state lives, what depends on what —
+these decisions compound, and agents optimise for the current task, not for
+the shape of the system a year from now.
+
+**Review** is non-negotiable. Every AI-written change gets read the way I'd
+read a teammate's pull request — four years at Emirates Group instilled that
+standard, and it applies double when the author never gets tired, never gets
+defensive, and never actually understands the business.
+
+## What gets delegated
+
+Implementation. Once the plan is concrete — this module, this interface,
+these tests — agents are genuinely excellent. They type faster than I do,
+they don't cut corners on error handling out of boredom, and they'll happily
+write the fifth variant of a migration script with the same care as the
+first.
+
+The productivity gain isn't subtle. Tasks that used to be an afternoon are
+now a review cycle. But the gain only holds if the output is *reviewable*:
+small, well-scoped changes with tests, produced from an explicit plan. Ask an
+agent for a feature and you get a haystack; ask it for a step and you get a
+diff you can actually read.
+
+## Tests are the contract
+
+The practice that ties it together is test-first delegation. A failing test
+is the most precise task description an agent can receive — far better than
+prose. It pins the behaviour, defines done, and turns review into a question
+I can answer: does this implementation earn this green?
+
+Agents also make test-driven development cheaper, which is a quiet
+revolution. The old objection to TDD was the overhead of writing tests
+before code. When implementation is delegated, that overhead nearly
+disappears — and the tests remain as the durable record of what the system
+promises.
+
+## Where this is heading
+
+The tools will keep improving, and the line between "human-led" and
+"delegated" will keep moving. But I don't expect the shape of the agreement
+to change: someone has to own the intent, the boundaries, and the standard of
+what merges. The engineers who thrive with these tools are the ones who treat
+them as leverage on judgment — not a substitute for it.

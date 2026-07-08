@@ -21,6 +21,14 @@ export function SiteNav() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/blog"
+                className="transition-colors hover:text-foreground"
+              >
+                Blog
+              </Link>
+            </li>
           </ul>
           <ThemeToggle />
         </div>
