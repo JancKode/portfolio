@@ -1,4 +1,5 @@
 import { About } from "@/components/about";
+import { CareerTimeline } from "@/components/career-timeline";
 import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
 import { Skills } from "@/components/skills";
@@ -24,7 +25,7 @@ export default function Home() {
       <About />
       <SectionStub id="projects" />
       <Skills />
-      <SectionStub id="career" />
+      <CareerTimeline />
       <Contact />
     </main>
   );
