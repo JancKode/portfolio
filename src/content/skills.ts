@@ -1,0 +1,82 @@
+// Content layer: the tech stack from the CV, grouped by the PRD's six
+// categories. The AI & Agentic row carries Jan's positioning, so it is
+// flagged for visual emphasis.
+export const skillCategories = [
+  {
+    id: "languages",
+    title: "Languages",
+    highlighted: false,
+    skills: ["TypeScript", "JavaScript", "Python", "SQL"],
+  },
+  {
+    id: "frontend",
+    title: "Frontend",
+    highlighted: false,
+    skills: [
+      "ReactJS",
+      "Next.js",
+      "React Native",
+      "Redux",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Webpack",
+    ],
+  },
+  {
+    id: "backend",
+    title: "Backend",
+    highlighted: false,
+    skills: [
+      "Node.js",
+      "GraphQL",
+      "Hasura",
+      "Express",
+      "REST APIs",
+      "Flask",
+      "Prisma",
+      "PostgreSQL",
+      "Oracle",
+    ],
+  },
+  {
+    id: "ai-agentic",
+    title: "AI & Agentic",
+    highlighted: true,
+    skills: [
+      "OpenAI API",
+      "LangChain",
+      "Vercel AI SDK",
+      "Mastra AI",
+      "Claude Code",
+      "Cursor",
+      "GitHub Copilot",
+      "BullMQ pipelines",
+      "Agentic workflows",
+      "TDD with AI agents",
+    ],
+  },
+  {
+    id: "cloud-devops",
+    title: "Cloud & DevOps",
+    highlighted: false,
+    skills: [
+      "AWS EC2",
+      "Microsoft Azure",
+      "Google Cloud",
+      "Nginx",
+      "PM2",
+      "Jenkins",
+      "GitHub Actions",
+      "Docker",
+      "CI/CD pipelines",
+      "Blue-green deployment",
+    ],
+  },
+  {
+    id: "testing",
+    title: "Testing",
+    highlighted: false,
+    skills: ["Playwright", "Cypress", "Vitest", "Jest", "Puppeteer"],
+  },
+] as const;

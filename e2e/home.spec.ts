@@ -85,6 +85,56 @@ test.describe("sticky nav", () => {
   });
 });
 
+test.describe("about", () => {
+  test("visitor reads Jan's senior positioning in the About Section", async ({
+    page,
+  }) => {
+    await page.goto("/#about");
+
+    const about = page.locator("#about");
+    await expect(
+      about.getByRole("heading", { name: "About" }),
+    ).toBeVisible();
+    // Positioning facts from the CV: seniority and AI-assisted ways of working.
+    await expect(about.getByText(/9\+ years/i)).toBeVisible();
+    await expect(about.getByText(/AI-assisted development/i)).toBeVisible();
+  });
+});
+
+test.describe("skills", () => {
+  test("visitor scans the tech stack grouped by category", async ({
+    page,
+  }) => {
+    await page.goto("/#skills");
+    const skills = page.locator("#skills");
+
+    for (const category of [
+      "Languages",
+      "Frontend",
+      "Backend",
+      "AI & Agentic",
+      "Cloud & DevOps",
+      "Testing",
+    ]) {
+      await expect(
+        skills.getByRole("heading", { name: category }),
+      ).toBeVisible();
+    }
+
+    // Spot-check one badge per category, straight from the CV.
+    for (const skill of [
+      "TypeScript",
+      "Next.js",
+      "GraphQL",
+      "Mastra AI",
+      "GitHub Actions",
+      "Playwright",
+    ]) {
+      await expect(skills.getByText(skill, { exact: true })).toBeVisible();
+    }
+  });
+});
+
 test.describe("contact links", () => {
   test("visitor can reach Jan on GitHub, LinkedIn, and email", async ({
     page,
