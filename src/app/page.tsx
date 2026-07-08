@@ -1,12 +1,24 @@
+import { Contact } from "@/components/contact";
+import { Hero } from "@/components/hero";
+import { sections } from "@/content/sections";
+
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
-      <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-        Jan Cyngynn Kristoffer Frigillana
-      </h1>
-      <p className="text-lg text-zinc-400 sm:text-xl">
-        Senior Software Engineer · AI Systems &amp; Automation
-      </p>
+    <main className="flex-1">
+      <Hero />
+      {sections.filter((section) => section.id !== "contact").map((section) => (
+        <section
+          key={section.id}
+          id={section.id}
+          className="mx-auto max-w-5xl scroll-mt-16 px-6 py-24"
+        >
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            {section.title}
+          </h2>
+          <p className="mt-4 text-zinc-500">Coming soon.</p>
+        </section>
+      ))}
+      <Contact />
     </main>
   );
 }
