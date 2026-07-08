@@ -1,0 +1,50 @@
+Storyline is an AI-native SEO and AEO (Answer Engine Optimization) platform
+for B2B software companies — helping businesses rank on Google while earning
+citations inside AI answer engines including ChatGPT, Perplexity, and Gemini.
+
+## The problem
+
+Search is splitting in two. Buyers still start on Google, but a growing share
+of discovery happens inside AI answer engines that cite a handful of sources
+and ignore everyone else. Producing content that wins in both worlds — deeply
+researched, factually accurate, published across many CMSes — took the
+platform's clients days per article and didn't scale.
+
+## What I built
+
+Storyline runs as an **agentic marketing engine**: AI handles research,
+content drafting, fact-checking, and CMS publishing at scale, with humans
+directing strategy. As the freelance full-stack engineer I own large parts of
+that machinery:
+
+- **Multi-step AI agent workflows** with Mastra AI and the Vercel AI SDK,
+  automating the full content production cycle from keyword brief to
+  fact-checked draft.
+- A **background processing system on BullMQ** (Redis-backed) managing the
+  async content pipeline — article generation, CMS publishing, and AI
+  visibility monitoring — with retry logic, priority queuing, and worker
+  concurrency.
+- **Deployment infrastructure from scratch**: two AWS EC2 instances (one for
+  the Mastra agent service, one for the Next.js app), Nginx reverse proxies,
+  PM2 process management, blue-green deployment, pre-commit checks, and
+  GitHub Actions CI/CD covering the release workflow end to end.
+- **Integrations** across Zapier automation hooks, Granola meeting
+  intelligence, and CMS publishing APIs for WordPress, Webflow, Sanity, and
+  Contentful.
+- **Pipeline attribution** features tracking which AI engines surface client
+  content and tying those citations back to lead conversions.
+
+The codebase itself is deeply AI-assisted: structured agentic workflows with
+planning, architecture, and code review staying human-led.
+
+## Stack
+
+Next.js, TypeScript, Node.js, Vercel AI SDK, Mastra AI, OpenAI, BullMQ,
+AWS EC2, Nginx, PM2, Zapier, GitHub Actions.
+
+## Impact
+
+Time-to-publish dropped **from days to hours** while keeping drafts
+fact-checked and on-brand. The release workflow — from pre-commit hooks to
+blue-green production deploys — is covered end to end, and attribution now
+connects AI-engine citations to real lead conversions.

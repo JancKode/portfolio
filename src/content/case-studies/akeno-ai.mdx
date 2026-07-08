@@ -1,0 +1,47 @@
+akeno.ai (formerly Data Lighthouse) is a supply chain traceability platform:
+enterprises use it to trace materials and products through complex,
+multi-party supply chains.
+
+## The problem
+
+Supply chain data is sprawling — suppliers, batches, certifications,
+schedules — and the people who need answers aren't database experts. The
+platform needed real-time visibility over that data, interfaces that could
+handle bulk operations and complex scheduling, and eventually a way to just
+*ask questions* of it in plain language.
+
+## What I built
+
+Four years of full-stack product work, from the data layer to the AI
+assistant:
+
+- **The AI assistant feature**, built on OpenAI via Azure and LangChain, with
+  conversational flows that answer supply chain queries using context from
+  the platform's own data.
+- **Real-time data plumbing**: Hasura GraphQL subscriptions and RESTful
+  endpoints, with API contracts documented and kept consistent across the
+  codebase.
+- **Heavy-duty interfaces**: AG Grid and Bryntum extended well beyond their
+  defaults for complex scheduling views and bulk data management specific to
+  supply chain workflows.
+- **Product analytics** with Amplitude, tracking feature usage that fed
+  directly into decisions about what to build and what to drop.
+- **Sustained refactoring** of key parts of the codebase to clear technical
+  debt as the product grew, plus proof-of-concepts (documented with findings
+  and trade-offs) whenever the team evaluated new tools.
+
+I worked directly with the CEO on feature scoping — translating requirements
+into technical plans and pushing back when something needed more clarity
+before building started.
+
+## Stack
+
+ReactJS, Next.js, TypeScript, Tailwind CSS, GraphQL, Hasura, Node.js, Python,
+OpenAI API, LangChain, Microsoft Azure, Cypress, AG Grid, Bryntum, Amplitude.
+
+## Impact
+
+The AI assistant turned a specialist tool into something anyone in the
+business could query. Amplitude-instrumented features gave the product team
+evidence for roadmap calls, and the ongoing refactoring kept a four-year-old
+codebase shippable as it scaled.
