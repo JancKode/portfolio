@@ -35,7 +35,11 @@ export default async function CaseStudyPage({
   );
 
   return (
-    <main className="flex-1">
+    <main
+      id="main"
+      tabIndex={-1}
+      className="flex-1 scroll-mt-16 focus:outline-none"
+    >
       <InstantScrollTop />
       <article className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
         <Link

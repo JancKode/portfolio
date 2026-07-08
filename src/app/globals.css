@@ -70,6 +70,17 @@
   }
 }
 
+/* Reduced motion: no element may sit or move on a transform — this also
+   neutralises the server-rendered entrance offsets (Motion inlines the
+   initial translate into the SSR markup, and the server can't know the
+   visitor's motion preference). Reveals simplify to fades, which
+   MotionConfig reducedMotion="user" keeps but strips of movement. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transform: none !important;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
