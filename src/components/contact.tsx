@@ -12,7 +12,7 @@ export function Contact() {
       <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
         Contact
       </h2>
-      <p className="mt-4 max-w-xl text-zinc-400">
+      <p className="mt-4 max-w-xl text-muted">
         Open to senior roles in AI systems and automation. The fastest way to
         reach me is email.
       </p>
@@ -21,7 +21,7 @@ export function Contact() {
           <li key={link.label}>
             <a
               href={link.href}
-              className="inline-block rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500"
+              className="inline-block rounded-full border border-edge px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-edge-strong"
             >
               {link.label}
             </a>

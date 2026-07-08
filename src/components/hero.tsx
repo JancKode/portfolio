@@ -35,7 +35,7 @@ export function Hero() {
         </motion.h1>
         <motion.p
           variants={entrance}
-          className="text-lg text-zinc-400 sm:text-2xl"
+          className="text-lg text-muted sm:text-2xl"
         >
           {profile.role} · {profile.focus}
         </motion.p>
@@ -45,14 +45,14 @@ export function Hero() {
         >
           <a
             href="#projects"
-            className="rounded-full bg-zinc-100 px-6 py-3 text-sm font-medium text-zinc-900 transition-colors hover:bg-white"
+            className="rounded-full bg-contrast px-6 py-3 text-sm font-medium text-on-contrast transition-colors hover:bg-contrast-strong"
           >
             View work
           </a>
           <a
             href={profile.cvPath}
             download
-            className="rounded-full border border-zinc-700 px-6 py-3 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-500"
+            className="rounded-full border border-edge px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-edge-strong"
           >
             Download CV
           </a>

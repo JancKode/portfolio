@@ -15,7 +15,7 @@ export function About() {
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
           About
         </h2>
-        <div className="mt-6 max-w-3xl space-y-4 text-zinc-400">
+        <div className="mt-6 max-w-3xl space-y-4 text-muted">
           {profile.about.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

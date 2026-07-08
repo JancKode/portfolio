@@ -20,13 +20,13 @@ export function Skills() {
             transition={{ duration: 0.5 }}
             className={
               category.highlighted
-                ? "rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-6"
+                ? "rounded-2xl border border-accent-edge bg-accent-surface p-6"
                 : undefined
             }
           >
             <h3
               className={`text-sm font-medium uppercase tracking-widest ${
-                category.highlighted ? "text-indigo-300" : "text-zinc-500"
+                category.highlighted ? "text-accent" : "text-faint"
               }`}
             >
               {category.title}
@@ -49,8 +49,8 @@ export function Skills() {
                     }}
                     className={`flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-sm ${
                       category.highlighted
-                        ? "border-indigo-400/40 text-indigo-100"
-                        : "border-zinc-700 text-zinc-300"
+                        ? "border-accent-edge text-accent-strong"
+                        : "border-edge text-muted"
                     }`}
                   >
                     {icon && (
