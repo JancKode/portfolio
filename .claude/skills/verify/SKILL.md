@@ -36,3 +36,11 @@ sections in viewport, CV download via `waitForEvent("download")` (check
 - Hero content is server-rendered at `opacity: 0` (motion entrance);
   no-JS visitors see a blank hero. Playwright's `isVisible()` returns
   true anyway — check computed opacity when this matters.
+- Next 16 refuses to start a second `next dev` for this directory
+  ("Another next dev server is already running" + PID). Kill the PID it
+  names — that one is ours; the port-3000 server is a different app.
+- Never add `data-scroll-behavior="smooth"` to `<html>`: Next 16 then
+  forces instant scrolling on hash Link clicks, killing the nav glide.
+  To observe the glide, sample `window.scrollY` every ~60ms after a nav
+  click — expect eased intermediate values (instant under
+  `reducedMotion: "reduce"`).
