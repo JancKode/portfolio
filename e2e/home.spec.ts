@@ -133,6 +133,18 @@ test.describe("skills", () => {
       await expect(skills.getByText(skill, { exact: true })).toBeVisible();
     }
   });
+
+  test("skill badges display brand icons", async ({ page }) => {
+    await page.goto("/#skills");
+    const skills = page.locator("#skills");
+
+    await expect(
+      skills.locator("li", { hasText: /^TypeScript$/ }).locator("svg"),
+    ).toBeVisible();
+    // Most of the stack has a brand icon; skills without one (e.g. Mastra AI,
+    // Playwright) fall back to text-only badges.
+    expect(await skills.locator("li svg").count()).toBeGreaterThan(25);
+  });
 });
 
 test.describe("contact links", () => {
