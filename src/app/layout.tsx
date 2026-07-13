@@ -46,6 +46,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Motion bakes its hidden `initial` state into server HTML; only
+            Motion's own runtime ever un-hides it. <noscript> content is
+            inert once JS runs, so this fallback is invisible to hydrated
+            visitors and only fires when the showcase would otherwise stay
+            blank (issue #12, user story 6). */}
+        <noscript>
+          <style>{`[data-motion-reveal]{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-contrast focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-on-contrast"

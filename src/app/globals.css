@@ -39,6 +39,109 @@
   --accent-surface: rgb(99 102 241 / 0.08);
 }
 
+/* Brand immersion tokens (issue #12). A data-brand attribute scopes one
+   Case Study's palette; the .light overrides key off the theme class that
+   next-themes stamps on <html> pre-paint, so brand switching involves zero
+   JS. Text roles (--brand, --brand-strong) hold ≥ 4.5:1 against the theme
+   background in both themes.
+
+   Extraction method per brand:
+   - storyline: computed-style sampling of withstoryline.com (2026-07-09) —
+     blue #2563eb links, orange #f97316 accents, violet tints.
+   - akeno-ai: computed-style sampling of akeno.ai — petrol #183b4b,
+     cream #f3efe7, apricot CTA #faba82.
+   - aicpa: computed-style sampling of www.aicpa-cima.com — plum #72246c,
+     ink #282937.
+   - emirates-group: internal product, no landing page — brand-knowledge
+     Emirates red #d71921 + gold family. */
+:root {
+  /* Neutral defaults alias the site accent so brand utilities resolve
+     everywhere (home, nav) without a data-brand in scope. */
+  --brand: var(--accent);
+  --brand-strong: var(--accent-strong);
+  --brand-surface: var(--accent-surface);
+  --brand-edge: var(--accent-edge);
+  --brand-glow: rgb(99 102 241 / 0.25);
+  --brand-stop-1: rgb(99 102 241 / 0.4);
+  --brand-stop-2: rgb(14 165 233 / 0.2);
+}
+
+[data-brand="storyline"] {
+  --brand: #60a5fa;
+  --brand-strong: #bfdbfe;
+  --brand-surface: rgb(59 130 246 / 0.12);
+  --brand-edge: rgb(59 130 246 / 0.45);
+  --brand-glow: rgb(96 165 250 / 0.35);
+  --brand-stop-1: #3b82f6;
+  --brand-stop-2: #a855f7;
+}
+.light [data-brand="storyline"] {
+  --brand: #1d4ed8;
+  --brand-strong: #1e3a8a;
+  --brand-surface: rgb(37 99 235 / 0.08);
+  --brand-edge: rgb(37 99 235 / 0.5);
+  --brand-glow: rgb(37 99 235 / 0.22);
+  --brand-stop-1: #2563eb;
+  --brand-stop-2: #9333ea;
+}
+
+[data-brand="akeno-ai"] {
+  --brand: #8ec9de;
+  --brand-strong: #cde8f2;
+  --brand-surface: rgb(36 89 112 / 0.18);
+  --brand-edge: rgb(142 201 222 / 0.4);
+  --brand-glow: rgb(142 201 222 / 0.3);
+  --brand-stop-1: #2c6a86;
+  --brand-stop-2: #faba82;
+}
+.light [data-brand="akeno-ai"] {
+  --brand: #1d4a5e;
+  --brand-strong: #183b4b;
+  --brand-surface: rgb(24 59 75 / 0.07);
+  --brand-edge: rgb(24 59 75 / 0.4);
+  --brand-glow: rgb(24 59 75 / 0.18);
+  --brand-stop-1: #183b4b;
+  --brand-stop-2: #f59e5b;
+}
+
+[data-brand="emirates-group"] {
+  --brand: #ff6b70;
+  --brand-strong: #ffb3b6;
+  --brand-surface: rgb(215 25 33 / 0.14);
+  --brand-edge: rgb(215 25 33 / 0.5);
+  --brand-glow: rgb(255 107 112 / 0.3);
+  --brand-stop-1: #d71921;
+  --brand-stop-2: #c8a951;
+}
+.light [data-brand="emirates-group"] {
+  --brand: #b5121b;
+  --brand-strong: #8f0e15;
+  --brand-surface: rgb(215 25 33 / 0.07);
+  --brand-edge: rgb(215 25 33 / 0.45);
+  --brand-glow: rgb(215 25 33 / 0.18);
+  --brand-stop-1: #d71921;
+  --brand-stop-2: #9c7c38;
+}
+
+[data-brand="aicpa"] {
+  --brand: #e087d9;
+  --brand-strong: #f2c4ee;
+  --brand-surface: rgb(114 36 108 / 0.18);
+  --brand-edge: rgb(224 135 217 / 0.4);
+  --brand-glow: rgb(224 135 217 / 0.3);
+  --brand-stop-1: #a2489a;
+  --brand-stop-2: #d946ef;
+}
+.light [data-brand="aicpa"] {
+  --brand: #72246c;
+  --brand-strong: #4d1849;
+  --brand-surface: rgb(114 36 108 / 0.07);
+  --brand-edge: rgb(114 36 108 / 0.45);
+  --brand-glow: rgb(114 36 108 / 0.18);
+  --brand-stop-1: #72246c;
+  --brand-stop-2: #c026d3;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -55,6 +158,13 @@
   --color-accent-strong: var(--accent-strong);
   --color-accent-edge: var(--accent-edge);
   --color-accent-surface: var(--accent-surface);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-edge: var(--brand-edge);
+  --color-brand-glow: var(--brand-glow);
+  --color-brand-stop-1: var(--brand-stop-1);
+  --color-brand-stop-2: var(--brand-stop-2);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
