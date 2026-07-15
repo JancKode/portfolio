@@ -4,6 +4,16 @@
 // Case Study pages, never on the cards (working agreement).
 export const caseStudies = [
   {
+    slug: "matterworx",
+    title: "MatterWorx",
+    tagline:
+      "A vendor management platform that brings agency onboarding, shift scheduling, credential tracking, and invoicing into one automated system.",
+    period: "",
+    stack: ["Next.js", ".NET", "AWS", "Docker"],
+    stat: { display: "one platform", label: "onboarding to invoicing" },
+    landing: { href: "https://matterworx.com", label: "matterworx.com" },
+  },
+  {
     slug: "storyline",
     title: "Storyline",
     tagline:
@@ -32,14 +42,14 @@ export const caseStudies = [
     slug: "emirates-group",
     title: "Emirates Group",
     tagline:
-      "Revenue accounting at airline scale — interline sales, tax computation, and proration.",
+      "Revenue accounting at airline scale, spanning interline sales, tax computation, and proration.",
     period: "2014 – 2018",
     stack: ["React", "Node.js", "REST & SOAP", "Jenkins", "Big Data"],
     stat: { display: "revenue accounting", label: "at airline scale" },
-    // Internal product — the link is the company site, labeled as such.
+    // Internal product, so the link is the company site, labeled as such.
     landing: {
       href: "https://www.emirates.com",
-      label: "Company site — emirates.com",
+      label: "Company site, emirates.com",
     },
   },
   {

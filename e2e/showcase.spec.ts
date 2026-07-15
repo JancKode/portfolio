@@ -7,6 +7,13 @@ import { expect, test, type Page } from "@playwright/test";
 
 const studies = [
   {
+    slug: "matterworx",
+    // Period is intentionally blank for now; not probed by the eyebrow tests.
+    period: "",
+    landingHref: "https://matterworx.com",
+    landingName: /matterworx\.com/i,
+  },
+  {
     slug: "storyline",
     period: "2025 – Present",
     landingHref: "https://withstoryline.com",
@@ -83,9 +90,9 @@ test.describe("case study landing links", () => {
     await page.goto("/#projects");
     const cardLinks = page.locator("#projects a");
 
-    // Exactly the four Case Study cards — no external exits before the
+    // Exactly the five Case Study cards — no external exits before the
     // visitor has read what Jan did.
-    await expect(cardLinks).toHaveCount(4);
+    await expect(cardLinks).toHaveCount(5);
     for (const href of await cardLinks.evaluateAll((links) =>
       links.map((l) => l.getAttribute("href")),
     )) {
@@ -97,6 +104,11 @@ test.describe("case study landing links", () => {
 test.describe("asymmetric showcase", () => {
   // Impact stats, straight from the CV: outcomes first, technologies second.
   const stats = [
+    {
+      slug: "matterworx",
+      display: "one platform",
+      label: /onboarding to invoicing/i,
+    },
     { slug: "storyline", display: "days → hours", label: /pipeline turnaround/i },
     { slug: "akeno-ai", display: "4 years", label: /in production/i },
     {

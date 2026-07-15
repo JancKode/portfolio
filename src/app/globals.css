@@ -141,6 +141,29 @@
   --brand-stop-1: #72246c;
   --brand-stop-2: #c026d3;
 }
+/* matterworx: dark-themed product with a white-accent logo, no public hex
+   to sample, so this is a chosen brand approximation, not a site-sample.
+   Emerald into sky reads as operations converging into one platform, and
+   sits clear of storyline's blue, akeno's petrol, emirates' red, aicpa's
+   plum. */
+[data-brand="matterworx"] {
+  --brand: #34d399;
+  --brand-strong: #a7f3d0;
+  --brand-surface: rgb(16 185 129 / 0.14);
+  --brand-edge: rgb(52 211 153 / 0.4);
+  --brand-glow: rgb(52 211 153 / 0.3);
+  --brand-stop-1: #10b981;
+  --brand-stop-2: #38bdf8;
+}
+.light [data-brand="matterworx"] {
+  --brand: #047857;
+  --brand-strong: #064e3b;
+  --brand-surface: rgb(5 150 105 / 0.08);
+  --brand-edge: rgb(5 150 105 / 0.45);
+  --brand-glow: rgb(5 150 105 / 0.18);
+  --brand-stop-1: #059669;
+  --brand-stop-2: #0284c7;
+}
 
 @theme inline {
   --color-background: var(--background);

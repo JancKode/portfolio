@@ -1,6 +1,7 @@
 import { AicpaMotif } from "@/components/motifs/aicpa-motif";
 import { AkenoMotif } from "@/components/motifs/akeno-motif";
 import { EmiratesMotif } from "@/components/motifs/emirates-motif";
+import { MatterworxMotif } from "@/components/motifs/matterworx-motif";
 import { StorylineMotif } from "@/components/motifs/storyline-motif";
 
 // Living motif registry, keyed by Case Study slug. Each motif abstractly
@@ -8,6 +9,7 @@ import { StorylineMotif } from "@/components/motifs/storyline-motif";
 // appears on the card and the Case Study hero (one object, two sizes).
 // Supersedes the old static gradient registry.
 const motifs = {
+  matterworx: MatterworxMotif,
   storyline: StorylineMotif,
   "akeno-ai": AkenoMotif,
   "emirates-group": EmiratesMotif,

@@ -56,9 +56,11 @@ export default async function CaseStudyPage({
         </div>
         <div className="mt-8 flex items-center gap-3 text-brand">
           <BrandMark slug={slug} className="size-7 shrink-0" />
-          <p className="text-xs font-medium tracking-widest uppercase">
-            {study.period}
-          </p>
+          {study.period && (
+            <p className="text-xs font-medium tracking-widest uppercase">
+              {study.period}
+            </p>
+          )}
         </div>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           {study.title}

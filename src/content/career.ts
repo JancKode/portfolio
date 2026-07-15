@@ -21,7 +21,7 @@ export const careerRoles = [
     title: 'Application Development Team Lead',
     period: 'Feb 2021 – Sep 2021',
     summary:
-      'Led a team of 5+ developers on the AICPA Spanish Hub in a SAFe Agile setup — sprint planning, client updates, and code and performance reviews.',
+      'Led a team of 5+ developers on the AICPA Spanish Hub in a SAFe Agile setup, running sprint planning, client updates, and code and performance reviews.',
   },
   {
     company: 'Outliant',

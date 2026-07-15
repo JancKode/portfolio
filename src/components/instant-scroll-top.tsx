@@ -9,6 +9,14 @@ import { useLayoutEffect } from "react";
 export function InstantScrollTop() {
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
+    // A smooth anchor glide from the Projects Section can still be in flight
+    // during the soft navigation, and the router's own scroll-to-top runs
+    // after this effect. Reaffirm on the next frame so a Case Study opened
+    // from a lower card never settles mid-glide.
+    const id = requestAnimationFrame(() =>
+      window.scrollTo({ top: 0, behavior: "instant" }),
+    );
+    return () => cancelAnimationFrame(id);
   }, []);
   return null;
 }

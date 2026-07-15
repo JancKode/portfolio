@@ -4,15 +4,17 @@ import { motion } from "motion/react";
 import { ProjectCard } from "@/components/project-card";
 import { caseStudies } from "@/content/case-studies";
 
-// Asymmetric 12-column showcase: Storyline and akeno.ai are large feature
-// panels, Emirates Group and AICPA the compact pair below; single column on
-// mobile. The reveal wrapper owns this element's only transform.
+// Asymmetric 12-column showcase: MatterWorx and Storyline are the large
+// feature panels on top, akeno.ai / Emirates Group / AICPA the compact trio
+// below; single column on mobile. The reveal wrapper owns this element's
+// only transform.
 const layout: Record<string, { variant: "feature" | "compact"; span: string }> =
   {
-    storyline: { variant: "feature", span: "lg:col-span-7" },
-    "akeno-ai": { variant: "feature", span: "lg:col-span-5" },
-    "emirates-group": { variant: "compact", span: "lg:col-span-6" },
-    aicpa: { variant: "compact", span: "lg:col-span-6" },
+    matterworx: { variant: "feature", span: "lg:col-span-7" },
+    storyline: { variant: "feature", span: "lg:col-span-5" },
+    "akeno-ai": { variant: "compact", span: "lg:col-span-4" },
+    "emirates-group": { variant: "compact", span: "lg:col-span-4" },
+    aicpa: { variant: "compact", span: "lg:col-span-4" },
   };
 
 export function FeaturedProjects() {

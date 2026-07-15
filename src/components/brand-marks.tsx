@@ -34,6 +34,18 @@ const marks: Record<string, ReactNode> = {
       <circle cx="19.5" cy="5" r="1.5" />
     </>
   ),
+  // Scattered nodes converging into one hub: many tools into one platform.
+  matterworx: (
+    <>
+      <circle cx="4.5" cy="6" r="1.5" />
+      <circle cx="4.5" cy="12" r="1.5" />
+      <circle cx="4.5" cy="18" r="1.5" />
+      <circle cx="18.5" cy="12" r="2.5" />
+      <path d="m6 6.6 8.8 4" />
+      <path d="M6 12h9.8" />
+      <path d="m6 17.4 8.8-4" />
+    </>
+  ),
   // A reviewed ledger line: audit checkmark inside a document frame.
   aicpa: (
     <>

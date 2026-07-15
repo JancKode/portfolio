@@ -1,7 +1,8 @@
 import { expect, test } from "@playwright/test";
 
-// Source of truth: the CV's four flagship projects.
+// Source of truth: the flagship projects on the CV.
 const studies = [
+  { slug: "matterworx", title: "MatterWorx" },
   { slug: "storyline", title: "Storyline" },
   { slug: "akeno-ai", title: "akeno.ai" },
   { slug: "emirates-group", title: "Emirates Group" },
@@ -9,7 +10,7 @@ const studies = [
 ];
 
 test.describe("featured projects", () => {
-  test("four featured cards render in the Projects Section", async ({
+  test("every featured card renders in the Projects Section", async ({
     page,
   }) => {
     await page.goto("/#projects");

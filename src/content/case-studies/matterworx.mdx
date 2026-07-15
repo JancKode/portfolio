@@ -1,0 +1,49 @@
+MatterWorx is a vendor management platform for staffing. The agencies,
+shifts, credentials, timesheets, and invoicing that used to live in separate
+tools now run in one automated system.
+
+## The problem
+
+Running a staffing operation means juggling disconnected tools: one for
+onboarding agencies, another for scheduling shifts, a spreadsheet for
+credentials, something else again for timesheets and invoicing. Nothing
+reconciles on its own, and the manual handoffs between those tools are where
+errors and delays creep in. The platform needed to pull all of it into a
+single system and automate the workflows that tie those pieces together.
+
+## What I built
+
+I work across several domains of the platform, on both the operational
+workflows and the interfaces that drive them:
+
+- **End-to-end operational workflows** covering agency onboarding, shift
+  scheduling, credential tracking, invoicing, and compliance, automated so
+  the steps that used to be manual now hand off on their own.
+- **Geofencing and shift management**, so on-site shifts are tracked against
+  real locations rather than on trust alone.
+- **Timesheets and candidate management**, wired into the same scheduling and
+  invoicing flows so the data stays consistent from start to finish.
+- **One consolidated platform** that replaces the patchwork of separate tools
+  a staffing operation used to run on.
+
+## How I built it
+
+MatterWorx is built AI-natively. Claude Code and Cursor are the primary build
+engine, and close to 97% of the codebase is AI-generated. That pace only
+holds up because the workflow is built for it. Domain-driven design keeps the
+boundaries clear, and test-driven development keeps the AI-generated output
+honest, so what ships is production-grade rather than a fast first draft. It
+let one engineer deliver at the pace a full team would normally need.
+
+## Stack
+
+Next.js and TypeScript on the front end, .NET on the back end, deployed on AWS
+with Docker. Domain-driven design and test-driven development throughout.
+
+## Impact
+
+Tooling that used to be spread across several disconnected systems now runs as
+one platform, with the workflows between onboarding and invoicing automated
+rather than stitched together by hand. Holding the AI-native build to
+production standards through DDD and TDD is what made a project this broad
+possible at solo pace.
